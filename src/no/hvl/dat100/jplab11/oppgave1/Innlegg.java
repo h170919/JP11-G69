@@ -32,7 +32,7 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
-		this.likes = 0;
+		this.likes = likes;
 
 	}
 
@@ -55,12 +55,12 @@ public abstract class Innlegg {
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.id;
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.likes;
 
 	}
 
@@ -69,7 +69,10 @@ public abstract class Innlegg {
 	}
 
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		if(this.id == innlegg.id) {
+			return true;
+		}
+		return false;
 
 	}
 
