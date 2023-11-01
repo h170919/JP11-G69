@@ -61,7 +61,7 @@ public abstract class Innlegg {
 	}
 
 	public void doLike() {
-		throw new UnsupportedOperationException(TODO.method());
+		this.likes += 1;
 	}
 
 	public boolean erLik(Innlegg innlegg) {
@@ -70,9 +70,14 @@ public abstract class Innlegg {
 	}
 
 	@Override
+	/* "1\nOle Olsen\n23-10\n7\n" 
+	 * der det først tallet er id for innlegget 
+	 * og 7 er antall likes for eksemplet.
+	 */
 	public String toString() {
-
-		throw new UnsupportedOperationException(TODO.method());
+		String info = this.id + "\n" + this.bruker + "\n" + this.date + "\n" + this.likes;
+		return info;
+		
 
 	}
 
