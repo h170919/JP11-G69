@@ -29,27 +29,25 @@ public abstract class Innlegg {
 		this.bruker = bruker;
 		this.dato = dato;
 		this.likes = likes;
-		
 
 	}
 
 	public String getBruker() {
-
-		throw new UnsupportedOperationException(TODO.method());
+		return this.bruker;
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.dato; 
 
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
