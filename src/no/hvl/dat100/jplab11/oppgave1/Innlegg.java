@@ -28,7 +28,7 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
-		this.likes = 0;
+		this.likes = likes;
 		
 
 	}
