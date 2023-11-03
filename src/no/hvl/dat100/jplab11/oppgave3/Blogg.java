@@ -6,13 +6,16 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 public class Blogg {
 
 	// TODO: objektvariable 
+	private Innlegg[] innleggtabell;
+	private int nesteledig;
+	
 
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		innleggtabell = new Innlegg[20];
 	}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		innleggtabell = new Innlegg[lengde];
 	}
 
 	public int getAntall() {
