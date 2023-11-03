@@ -77,13 +77,7 @@ public abstract class Innlegg {
 	}
 
 	@Override
-	/* "1\nOle Olsen\n23-10\n7\n" 
-	 * der det først tallet er id for innlegget 
-	 * og 7 er antall likes for eksemplet.
-	 * 
-	 * 		TInnlegg innlegg = l
-		assertEquals("1\nOle Olsen\n23-10\n0\n",innlegg.toString());
-	 */
+
 	public String toString() {
 		
 		String info = this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n";

@@ -30,7 +30,6 @@ public class Bilde extends Tekst {
 		this.url = url;
 	}
 	
-	/* BILDE\n1\nOle Olsen\n23-10\n0\net bilde\nhttp://www.picture.com/oo.jpg\n */
 	@Override
 	public String toString() {
 		return "BILDE\n" + getId() + "\n" + getBruker() + "\n" + getDato() + "\n" + getLikes() + "\n" + url + "\n";

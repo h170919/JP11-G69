@@ -30,7 +30,6 @@ public class Tekst extends Innlegg {
 	}
 
 	@Override
-	/* TEKST\n1\nOle Olsen\n23-10\n0\nen tekst\n */
 	public String toString() {
 		return "TEKST\n" + getId() + "\n" + getBruker() + "\n" + getDato() + "\n" + getLikes() + "\n" + tekst + "\n";
 	}
