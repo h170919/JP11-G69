@@ -40,8 +40,7 @@ public class Tekst extends Innlegg {
 	@Override
 	public String toString() {
 		String s;
-		s = "TEKST" + "\n" + super.id + "\n" + super.bruker + "\n" + super.dato + "\n" + 
-				super.likes + "\n" + this.tekst + "\n";
+		s = "TEKST" + "\n" + super.toString() + this.tekst + "\n";
 		return s;
 
 	}

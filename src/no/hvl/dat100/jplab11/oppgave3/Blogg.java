@@ -43,8 +43,10 @@ public class Blogg {
 		if (this.nesteLedig == 0) {
 			return false;
 		}
-		for (int i = 0; i< innleggsTabell.length; i ++) {
-			if ( this.innleggsTabell[i].getId() == innlegg.getId()) {
+		for (int i = 0; i< innleggsTabell.length-1; i ++) {
+			
+			Innlegg temp = innleggsTabell[i];
+			if (temp != null && temp.getId() == innlegg.getId()) {
 				return true;
 			} 
 		}
@@ -52,18 +54,20 @@ public class Blogg {
 	}
 
 	public boolean ledigPlass() {
-		if (this.nesteLedig > this.innleggsTabell.length) {
-			return true;
-		} else return false;
+		if (this.nesteLedig == this.innleggsTabell.length) {
+			return false;
+		}
+		
+		return true;
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
-		if (this.nesteLedig+1 == this.innleggsTabell.length) {
+		if (!ledigPlass()) {
 			return false;
 		}
 		
-		if (finnes(innlegg) == true) {
+		if (finnes(innlegg)) {
 			return false;
 		}
 		
@@ -73,10 +77,14 @@ public class Blogg {
 	}
 	
 	public String toString() {
-		String s = "";
-		for (Innlegg i : innleggsTabell) {
-			s += i.toString() + "\n";
+		String s = nesteLedig + "\n";
+		
+		for (int i = 0; i<innleggsTabell.length; i++) {
+			if (innleggsTabell[i] != null) {
+				s = s + innleggsTabell[i].toString();
+			}else break;
 		}
+		System.out.println(s);
 		return s;
 	}
 
