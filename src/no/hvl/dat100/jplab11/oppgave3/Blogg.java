@@ -28,27 +28,43 @@ public class Blogg {
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
+		for(int i = 0; i < nesteledig; i++) {
+			if(innleggtabell[i].erLik(innlegg)) {
+				return i;
+			}
+		}
+		return -1;
 
-		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+	    return finnInnlegg(innlegg) != -1;
 	}
+
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
-
+	    return nesteledig < innleggtabell.length;
 	}
+
 	
 	public boolean leggTil(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+	    if (!finnes(innlegg) && ledigPlass()) {
+	        innleggtabell[nesteledig] = innlegg;
+	        nesteledig++;
+	        return true;
+	    }
+	    return false;
 	}
+
 	
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+	    String result = nesteledig + "\n";
+	    for (int i = 0; i < nesteledig; i++) {
+	        result += innleggtabell[i].toString();
+	    }
+	    return result;
 	}
+
 
 	// valgfrie oppgaver nedenfor
 	
