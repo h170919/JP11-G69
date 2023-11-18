@@ -13,19 +13,13 @@ public class Tekst extends Innlegg {
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
-		super.id = id;
-		super.bruker = bruker;
-		super.dato = dato;
+		super(id, bruker, dato);
 		this.tekst = tekst;
-		super.likes = 0;
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		super.id = id;
-		super.bruker = bruker;
-		super.dato = dato;
+		super(id, bruker, dato, likes);
 		this.tekst = tekst;
-		super.likes = likes;
 	}
 	
 	public String getTekst() {

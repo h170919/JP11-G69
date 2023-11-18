@@ -9,21 +9,13 @@ public class Bilde extends Tekst {
 	
 	
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		super.id = id;
-		super.bruker = bruker;
-		super.dato = dato;
-		super.tekst = tekst;
+		super(id, bruker, dato, tekst);
 		this.url = url;
-		super.likes = 0;
 	}
 
 	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		super.id = id;
-		super.bruker = bruker;
-		super.dato = dato;
-		super.tekst = tekst;
+		super(id, bruker, dato, likes, tekst);
 		this.url = url;
-		super.likes = likes;
 	}
 	
 	public String getUrl() {

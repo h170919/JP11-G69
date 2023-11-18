@@ -14,8 +14,6 @@ public abstract class Innlegg {
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
-		// TODO 
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
@@ -23,8 +21,6 @@ public abstract class Innlegg {
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
-		// TODO - START
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
