@@ -23,7 +23,7 @@ public class Blogg {
 	}
 	
 	public Innlegg[] getSamling() {
-		return innleggsTabell;
+		return this.innleggsTabell;
 
 	}
 	
@@ -31,8 +31,8 @@ public class Blogg {
 		if (this.nesteLedig == 0) {
 			return -1;
 		}
-		for (int i = 0; i< innleggsTabell.length; i ++) {
-			if ( this.innleggsTabell[i].getId() == innlegg.getId()) {
+		for (int i = 0; i<getAntall(); i ++) {
+			if (innlegg.erLik(innleggsTabell[i])) {
 				return i;
 			} 
 		}
@@ -43,7 +43,7 @@ public class Blogg {
 		if (this.nesteLedig == 0) {
 			return false;
 		}
-		for (int i = 0; i< innleggsTabell.length-1; i ++) {
+		for (int i = 0; i<getAntall(); i ++) {
 			
 			Innlegg temp = innleggsTabell[i];
 			if (temp != null && temp.getId() == innlegg.getId()) {
@@ -91,7 +91,12 @@ public class Blogg {
 	// valgfrie oppgaver nedenfor
 	
 	public void utvid() {
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
+		Innlegg[] newTab = new Innlegg[this.innleggsTabell.length*2];
+		for (int i = 0; i<innleggsTabell.length; i++) {
+			newTab[i] = innleggsTabell[i];
+		}
+		innleggsTabell = newTab;
 	}
 	
 	public boolean leggTilUtvid(Innlegg innlegg) {
@@ -101,8 +106,16 @@ public class Blogg {
 	}
 	
 	public boolean slett(Innlegg innlegg) {
+		int index = finnInnlegg(innlegg);
+		if (index == -1) {
+			return false;
+		}
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = index; i <= nesteLedig; i++) {
+			innleggsTabell[i] = innleggsTabell[i+1];
+		}
+		nesteLedig--;
+		return true;
 	}
 	
 	public int[] search(String keyword) {
