@@ -100,24 +100,34 @@ public class Blogg {
 	}
 	
 	public boolean leggTilUtvid(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		if(!finnes(innlegg) && ledigPlass()) {
+			innleggsTabell[nesteLedig] = innlegg;
+			nesteLedig++;
+			return true;
+		} else if(!finnes(innlegg) && !ledigPlass()) {
+			utvid();
+			innleggsTabell[nesteLedig] = innlegg;
+			nesteLedig++;
+			return true;
+		} else {
+			return false;
+		}
+		
 		
 	}
 	
 	public boolean slett(Innlegg innlegg) {
-		int index = finnInnlegg(innlegg);
-		if (index == -1) {
+		int pos = finnInnlegg(innlegg);
+		if (pos != -1) {
+			innleggsTabell[pos] = null;
+			nesteLedig--;
+			return true;
+		}
+		else {
 			return false;
 		}
-		
-		for (int i = index; i <= nesteLedig; i++) {
-			innleggsTabell[i] = innleggsTabell[i+1];
-		}
-		nesteLedig--;
-		return true;
+
 	}
-	
 	public int[] search(String keyword) {
 		
 		throw new UnsupportedOperationException(TODO.method());
